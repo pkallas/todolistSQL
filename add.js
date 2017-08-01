@@ -12,10 +12,11 @@ const input = [process.argv[3]];
 // add(text, input)
 const add = () => {client.query(text, input)
   .then(res => {
-    lastID
-    .then(res => console.log('Added task', (res.rows[0].id + 1)))
-    .catch(err => console.log('Added task 1'))
+    client.query(lastID)
+    .then(res => console.log("Added task", (res.rows[0].id + 1)))
+    .catch(err => console.log("Added task 1"))
   })
   .catch(err => console.error(err))}
 
+const lastID = 'SELECT id FROM tasks ORDER BY id DESC 1';
 module.exports = add;
