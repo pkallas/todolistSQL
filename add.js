@@ -19,4 +19,3 @@ const add = () => {client.query(text, input)
   .catch(err => console.error(err))}
 
 module.exports = add;
-const lastID = client.query('SELECT id FROM tasks ORDER BY id DESC LIMIT 1');

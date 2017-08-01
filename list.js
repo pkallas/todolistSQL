@@ -19,4 +19,5 @@ const list = () => {client.query(text)
   })))
   .catch(err => console.log(err))}
 
+list().query.on('end', () => { client.end(); });
 module.exports = list;
