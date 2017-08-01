@@ -17,7 +17,7 @@ const list = () => {client.query(text)
     return `${ids}  ${desc}`
     // return [desc, ids].join(' ')
   })))
-  .catch(err => console.log(err))}
+  .catch(err => console.log(err))};
 
-list().query.on('end', () => { client.end(); });
+
 module.exports = list;
