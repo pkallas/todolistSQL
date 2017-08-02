@@ -1,4 +1,6 @@
+// Require expect and pg client, then set up and connect to the client db
 const expect = require('chai').expect;
+process.env.NODE_ENV = 'test';
 const client = require('../../pg');
 const doneText = 'UPDATE tasks SET isComplete=true WHERE id=$1';
 const doneInput = [1];
