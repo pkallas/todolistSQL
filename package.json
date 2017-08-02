@@ -5,6 +5,7 @@
   "main": "tasks.js",
   "scripts": {
     "test": "mocha --recursive",
+    "run": "psql < schema_test.sql",
     "start": "psql < schema.sql"
   },
   "author": "",

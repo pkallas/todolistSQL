@@ -1,11 +1,4 @@
-const { Client } = require('pg');
-const client = new Client({
-  user: 'pkallas',
-  host: 'localhost',
-  database: 'todolist',
-  port: '5432'
-});
-client.connect();
+const client = require('./pg');
 const text = 'UPDATE tasks SET isComplete=true WHERE id=$1';
 const input = [process.argv[3]];
 
