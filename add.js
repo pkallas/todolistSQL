@@ -7,8 +7,8 @@ const lastID = 'SELECT id FROM tasks ORDER BY id DESC LIMIT 1';
 const add = () => {client.query(text, input)
   .then(res => {
     client.query(lastID)
-    .then(res => console.log("Added task", (res.rows[0].id + 1)))
-    .catch(err => console.log("Added task 1"))
+    .then(res => console.log("Added task " + res.rows[0].id))
+    .catch(err => console.log("Couldn't find last id"))
   })
   .catch(err => console.error(err))};
 
