@@ -1,14 +1,7 @@
-const { Client } = require('pg');
-const client = new Client({
-  user: 'pkallas',
-  host: 'localhost',
-  database: 'todolist',
-  port: '5432'
-});
-client.connect();
+const client = require('./pg');
 const text = 'INSERT INTO tasks(description) VALUES($1)';
 const input = [process.argv[3]];
-const lastID = 'SELECT id FROM tasks ORDER BY id DESC 1';
+const lastID = 'SELECT id FROM tasks ORDER BY id DESC LIMIT 1';
 
 // add(text, input)
 const add = () => {client.query(text, input)
